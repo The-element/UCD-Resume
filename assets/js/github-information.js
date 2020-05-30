@@ -44,6 +44,8 @@ function repoInformationHTML(repos) {
 }
 
 function fetchGitHubInformation(event) {    //Is being called when writing in the input-text-form.
+    $("#gh-user-data").html("");    //Setting their HTML content to an empty string has the effect of emptying these divs.
+    $("#gh-repo-data").html("");
 
     var username = $("#gh-username").val(); //stores the username input by calling the jquery-funtion value(val()).
     if (!username) {    //If the username field is empty, there's no value, then we're going to return a little piece of HTML that says "Please enter a GitHub username".
@@ -78,3 +80,4 @@ function fetchGitHubInformation(event) {    //Is being called when writing in th
         });
     
 }
+$(document).ready(fetchGitHubInformation);
